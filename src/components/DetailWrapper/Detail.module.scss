@@ -1,0 +1,26 @@
+.Wrapper {
+    width: 70%;
+    margin: 0 auto;
+}
+
+
+.WrapperHeader {
+    display: flex;
+    justify-content: space-between;
+    
+        div {
+            width: 30%;
+        }
+        
+        h2 {
+            font-size: 22px;
+        }
+
+        img {
+            width: 100%;
+        }
+}
+
+.ratings {
+    height: 250px;
+}

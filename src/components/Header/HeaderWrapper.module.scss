@@ -1,0 +1,51 @@
+header {
+    width:80%;
+    margin: 0 auto;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav nav > ul > li {
+    display: inline-flex;
+    margin: 0 10px;
+}
+
+.nav nav > ul > li > a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.navActive {
+    font-weight: 700;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.search > input {
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    
+}
+
+div hr {
+    border:none;
+    border-top: 1px dashed #ccc;
+}
+
+
+
+.search > button {
+    width: 50px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 0 10px;
+}
