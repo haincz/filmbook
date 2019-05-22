@@ -6,6 +6,8 @@ Main assumptions:
 2. Possibilities of creating your own list of favorite movies by the user
 3. Evaluating and viewing the best films
 4. Access to the most important information about the movie or series
+5. Search and automatic adding of a movie to the database if it does not exist (to do)
+6. Moble friendly (to do)
 
 ## Available Scripts
 
