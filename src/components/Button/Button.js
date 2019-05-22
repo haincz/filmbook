@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Button.module.scss'
 
 const  Button = (props) =>  {
 
@@ -8,9 +9,9 @@ const  Button = (props) =>  {
       return (
       <div className="listItem__wrapper--hover">
             { children === "ADD TO FAVOURITE" ?
-            <button onClick={() => submitFn(props)}>{children}</button>
+            <button className={styles.button} onClick={() => submitFn(props)}>{children}</button>
             : 
-            <button onClick={() => removeFn(props)}>{children}</button> 
+            <button className={styles.button} onClick={() => removeFn(props)}>{children}</button> 
             } 
       </div>
       )

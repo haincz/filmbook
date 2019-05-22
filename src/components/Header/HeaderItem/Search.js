@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../HeaderWrapper.module.scss'
+import buttonStyles from '../../Button/Button.module.scss'
 
 const Search = () => (
 
@@ -8,7 +9,7 @@ const Search = () => (
         <div className={styles.search}>
 
             <input type="search"></input>
-            <button>GO!</button>
+            <button className={buttonStyles.button}>GO!</button>
 
         </div>
         <hr></hr>

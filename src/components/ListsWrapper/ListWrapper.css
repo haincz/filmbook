@@ -78,21 +78,6 @@
 }
 
 
-.listItem__wrapper--hover button{
-    background:#1AAB8A;
-    color:#fff;
-    border:none;
-    position:relative;
-    height:50px;
-    font-size:1em;
-    width: 100%;
-    cursor:pointer;
-    transition:800ms ease all;
-    outline:none;
-    text-align: center;
-    z-index: 2;
-  }
-
 .listItem__wrapper--content > p > a {
   text-decoration: none;
   cursor: pointer;
@@ -113,33 +98,4 @@ p.list-wrapper__title--right > a {
 
 p.list-wrapper__title--right > a:hover {
   color: #ccc
-}
-
-
-.listItem__wrapper--hover button:hover{
-  background:#fff;
-  color:#1AAB8A;
-}
-
-.listItem__wrapper--hover button:before, 
-.listItem__wrapper--hover button:after{
-  content:'';
-  position:absolute;
-  top:0;
-  right:0;
-  height:2px;
-  width:0;
-  background: #1AAB8A;
-  transition:400ms ease all;
-}
-.listItem__wrapper--hover button:after{
-  right:inherit;
-  top:inherit;
-  left:0;
-  bottom:0;
-}
-.listItem__wrapper--hover button:hover:before, 
-.listItem__wrapper--hover button:hover:after{
-  width:100%;
-  transition:800ms ease all;
 }
