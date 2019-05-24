@@ -1,8 +1,8 @@
-The film base communicates with the API https://github.com/haincz/api-rest-movies-directory
+## Demo
 
-Demo: http://filmsbook.pl/
+http://filmsbook.pl/
 
-Main assumptions:
+## Main assumptions:
 
 1. Creating a front for the API
 2. Possibilities of creating your own list of favorite movies by the user
@@ -10,6 +10,10 @@ Main assumptions:
 4. Access to the most important information about the movie or series
 5. Search and automatic adding of a movie to the database if it does not exist (to do)
 6. Moble friendly (to do)
+
+## Data
+
+The film base communicates with the API https://github.com/haincz/api-rest-movies-directory
 
 ## Available Scripts
 
