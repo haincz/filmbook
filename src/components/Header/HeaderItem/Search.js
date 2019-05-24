@@ -1,19 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styles from '../HeaderWrapper.module.scss'
 import buttonStyles from '../../Button/Button.module.scss'
 
-const Search = () => (
+class Search extends Component {
 
-    <div>
-        <hr></hr>
-        <div className={styles.search}>
 
-            <input type="search"></input>
-            <button className={buttonStyles.button}>GO!</button>
+    state = {value: ''}
 
+    handleChange = (event) => {
+        this.setState({value: event.target.value});
+    }
+    
+
+    render() {
+
+
+        return (<div>
+            <hr></hr>
+            <div className={styles.search}>
+
+                <input type="search" value={this.state.value} onChange={this.handleChange}></input>
+                <button className={buttonStyles.button}>GO!</button>
+
+            </div>
+            <hr></hr>
         </div>
-        <hr></hr>
-    </div>
-)
+        )
+    }
+}
 
 export default Search;

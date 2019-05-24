@@ -1,5 +1,7 @@
 The film base communicates with the API https://github.com/haincz/api-rest-movies-directory
 
+Demo: http://filmsbook.pl/
+
 Main assumptions:
 
 1. Creating a front for the API

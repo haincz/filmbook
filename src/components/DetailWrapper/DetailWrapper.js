@@ -49,7 +49,7 @@ class DetailWrapper extends Component {
             <div className={styles.Wrapper}>
                 <div className={styles.WrapperHeader}>
                     <div className="detail-wrapper__header--image">
-                        <img src={details.Poster}></img>
+                        <img src={details.Poster} alt={details.Title}></img>
                     </div>
                     <div className="detail-wrapper__header--title">
                         <h1>{details.Title} ({details.Year})</h1>
