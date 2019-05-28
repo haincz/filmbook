@@ -24,6 +24,7 @@ ListItem.propTypes = {
     Metascore: PropTypes.string.isRequired,
     Title: PropTypes.string.isRequired,
     Poster: PropTypes.string,
+    _id: PropTypes.string.isRequired,
     submitFn: PropTypes.func.isRequired
 }
 

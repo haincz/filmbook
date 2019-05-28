@@ -23,6 +23,7 @@ const Root = () => {
           <Route path="/contact" component={Contact} />
           <Route path="/category/:id" render={props => <ListView {...props} /> } />
           <Route path="/movie/:id" render={props => <DetailView {...props} /> } />
+          <Route path="/search?:id" render={props => <ListView {...props} /> } />
         </Switch>
       </>
     </BrowserRouter>

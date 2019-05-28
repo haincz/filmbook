@@ -27,6 +27,18 @@ header {
     display: flex;
     justify-content: center;
     margin: 20px 0;
+    
+    a {
+        color: #ccc;
+        text-decoration: none;
+        display: block;
+        width: 5%;
+        height: 40px;
+        padding: 10px;
+        margin-left: 5px;
+        border-radius: 5px;
+        text-align: center;
+    }
 }
 
 .search > input {

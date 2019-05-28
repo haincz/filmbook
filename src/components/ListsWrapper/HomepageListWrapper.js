@@ -42,11 +42,10 @@ class HomepageListWrapper extends Component {
             .catch(error => this.setState({ error, isLoading: false }));
     }
 
-    addToFav = (props) => {
+    addToFav = (movie) => {
     
-
         this.setState(state => {
-            const favourites = [...state.favourites, props].reduce((acc, x) =>
+            const favourites = [...state.favourites, movie].reduce((acc, x) =>
             acc.concat(acc.find(y => y._id === x._id) ? [] : [x]), []);
 
             localStorage.setItem("favourites", JSON.stringify(favourites))
@@ -59,10 +58,10 @@ class HomepageListWrapper extends Component {
 
     }
 
-    removeFromFav = (props) => {
+    removeFromFav = (movie) => {
 
         const { favourites } = this.state
-        const index = favourites.findIndex(item => item._id === props._id)
+        const index = favourites.findIndex(item => item._id === movie._id)
         
         if (index !== -1) {
             favourites.splice(index, 1);
