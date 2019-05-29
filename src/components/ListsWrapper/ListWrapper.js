@@ -34,7 +34,7 @@ class ListWrapper extends Component {
 
                         let res = []
 
-                        if (typeof (result) === 'object') {
+                        if (result.length === undefined) {
 
                             res.push(result)
 
@@ -101,7 +101,7 @@ class ListWrapper extends Component {
                 .then(
                     (result) => {
                         let res = []
-                        if (typeof (result) === 'object') {
+                        if (result.length === undefined) {
 
                             res.push(result)
 
