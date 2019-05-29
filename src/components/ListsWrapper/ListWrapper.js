@@ -5,13 +5,13 @@ import ListHeader from './ListHeader/ListHeader'
 import './ListWrapper.css';
 
 class ListWrapper extends Component {
-    
+
 
     state = {
         list: [],
         isLoading: false,
         error: null,
-        favourites: JSON.parse(localStorage.getItem("favourites") || "[]")
+        favourites: JSON.parse(localStorage.getItem("favourites") || "[]"),
     };
 
     componentDidMount() {
@@ -19,7 +19,48 @@ class ListWrapper extends Component {
         const { id } = this.props.match.params
 
         if (this.props.match.url === `/search?${id}`) {
-            console.log("working")
+            fetch('http://movies.seojoker.pl/api/movies/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    Title: id
+                }),
+            })
+                .then(res => res.json())
+                .then(
+                    (result) => {
+
+                        let res = []
+
+                        if (typeof (result) === 'object') {
+
+                            res.push(result)
+
+                            this.setState({
+                                list: res,
+                                isLoading: false,
+                                error: null,
+                            });
+
+                        } else {
+
+                            this.setState({
+                                list: result,
+                                isLoading: false,
+                                error: null,
+                            });
+                        }
+                    },
+                    (error) => {
+                        this.setState({
+                            isLoaded: true,
+                            error
+                        });
+                    }
+                )
+
         } else {
 
 
@@ -32,6 +73,52 @@ class ListWrapper extends Component {
                             isLoading: false,
                             error: null,
                         });
+                    },
+                    (error) => {
+                        this.setState({
+                            isLoaded: true,
+                            error
+                        });
+                    }
+                )
+        }
+    }
+
+    componentDidUpdate(prevProps) {
+
+        const { id } = this.props.match.params
+        if (prevProps.match.params.id !== this.props.match.params.id) {
+            fetch('http://movies.seojoker.pl/api/movies/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    Title: id
+                }),
+            })
+                .then(res => res.json())
+                .then(
+                    (result) => {
+                        let res = []
+                        if (typeof (result) === 'object') {
+
+                            res.push(result)
+
+                            this.setState({
+                                list: res,
+                                isLoading: false,
+                                error: null,
+                            });
+
+                        } else {
+
+                            this.setState({
+                                list: result,
+                                isLoading: false,
+                                error: null,
+                            });
+                        }
                     },
                     (error) => {
                         this.setState({
