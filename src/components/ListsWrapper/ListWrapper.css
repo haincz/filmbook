@@ -99,3 +99,27 @@ p.list-wrapper__title--right > a {
 p.list-wrapper__title--right > a:hover {
   color: #ccc
 }
+
+
+@media screen and (max-width: 999px) {
+  .list-wrapper__list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .listItem__wrapper {
+    flex: 30%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .listItem__wrapper {
+    flex: 50%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .listItem__wrapper {
+    flex: 100%;
+  }
+}

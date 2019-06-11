@@ -38,6 +38,7 @@ header {
         margin-left: 5px;
         border-radius: 5px;
         text-align: center;
+        font-size: 0.9em
     }
 }
 
@@ -61,3 +62,33 @@ div hr {
     border-radius: 5px;
     margin: 0 10px;
 }
+
+@media screen and (max-width: 999px) {
+    .search {
+       
+        a {
+            width: 8%;
+        }
+    }
+}
+
+@media screen and (max-width: 695px) {
+    .search {
+       
+        a {
+            width: 12%;
+        }
+    }
+}
+
+
+@media screen and (max-width: 695px) {
+    .search {
+       
+        a {
+            width: 16%;
+        }
+    }
+}
+
+
