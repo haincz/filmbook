@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './Detail.module.scss';
+import Rating from '../Rating/Rating'
 
 class DetailWrapper extends Component {
 
@@ -60,7 +61,7 @@ class DetailWrapper extends Component {
                         <h2>Country: {details.Country}</h2>
                     </div>
                     <div className={styles.ratings}>
-
+                        <Rating max={5} value={0} onChange={(rating)=>console.log(rating)} />
                     </div>
                 </div>
                 <div className="detail-wrapper__description">
