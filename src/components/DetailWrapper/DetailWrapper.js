@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styles from './Detail.module.scss';
-import Rating from '../Rating/Rating'
+import Rating from '../Rating/Rating';
+import MetaTags from 'react-meta-tags';
+
 
 class DetailWrapper extends Component {
 
@@ -37,7 +39,6 @@ class DetailWrapper extends Component {
 
     render() {
         const { details, isLoading, error } = this.state;
-        console.log(details)
         if (error) {
             return <p>{error.message}</p>;
         }
@@ -48,6 +49,10 @@ class DetailWrapper extends Component {
 
         return (
             <div className={styles.Wrapper}>
+                <MetaTags>
+                    <title>{details.Title} - filmsbook - movie library</title>
+                    <meta name="description" content={details.Plot} />
+                </MetaTags>
                 <div className={styles.WrapperHeader}>
                     <div className="detail-wrapper__header--image">
                         <img src={details.Poster} alt={details.Title}></img>
@@ -61,7 +66,7 @@ class DetailWrapper extends Component {
                         <h2>Country: {details.Country}</h2>
                     </div>
                     <div className={styles.ratings}>
-                        <Rating max={5} value={0} onChange={(rating)=>console.log(rating)} />
+                        <Rating max={5} value={0} onChange={(rating) => console.log(rating)} />
                     </div>
                 </div>
                 <div className="detail-wrapper__description">

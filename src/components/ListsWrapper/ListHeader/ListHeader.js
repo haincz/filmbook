@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import MetaTags from 'react-meta-tags';
+
 
 const ListHeader = (props) => {
 
@@ -12,6 +14,9 @@ const ListHeader = (props) => {
     return (
 
         <div className="list-wrapper__title">
+            <MetaTags>
+                <title>{header} - Filmsbook</title>
+            </MetaTags>
             <p className="list-wrapper__title--left">{url === `/search?${id}` ? `SEARCH: ${header}` : header}</p>
         </div>
     )
