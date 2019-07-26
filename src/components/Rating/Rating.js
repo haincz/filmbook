@@ -8,7 +8,10 @@ class Rating extends Component {
 
         this.state = {
             indicator: this.makeIndicator(3, 5),
-            rating: 3
+            rating: 3,
+            numOfRatings: 1,
+            actualAverage: 3,
+            averageSum: 3
         }
 
         this.makeIndicator = this.makeIndicator.bind(this)
@@ -32,13 +35,19 @@ class Rating extends Component {
         return () => this.setIndicator(this.state.rating)
     }
 
-    onClick = (i) => {
-        return () => this.setRating(i)
+    onClick = (i, numOfRatings, average) => {
+        return () => this.setRating(i, numOfRatings, average)
     }
 
-    setRating = (rating) => {
+    setRating = (rating, numOfRatings, averageSum) => {
+
+        let average = (averageSum + rating) / numOfRatings
+
         this.setState({
-            rating: rating
+            rating: rating,
+            numOfRatings: numOfRatings + 1,
+            actualAverage: average,
+            averageSum: averageSum + rating
         })
         this.setIndicator(rating)
         this.props.onChange(rating)
@@ -46,14 +55,17 @@ class Rating extends Component {
  
     render() {
 
+        const {numOfRatings, actualAverage, averageSum} = this.state
+
+
         return (
 
             <>
                 {this.state.indicator.map((item, i) => (<span key={i}
                     className={(item ? styles.starSelected : styles.star)}
-                    onMouseEnter={this.onMouseEnter(i+1)} onMouseLeave={this.onMouseLeave(i+1)} onClick={this.onClick(i+1)}> &#9733;</span>))}
-                <p>Number of ratings: 0</p>
-                <p>Average rating: 0</p>
+                    onMouseEnter={this.onMouseEnter(i+1)} onMouseLeave={this.onMouseLeave(i+1)} onClick={this.onClick(i+1, numOfRatings, averageSum)}> &#9733;</span>))}
+                <p>Number of ratings: {numOfRatings}</p>
+                <p>Average rating: {actualAverage.toFixed(1)}</p>
             </>
         );
     }
